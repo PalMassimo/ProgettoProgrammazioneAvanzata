@@ -5,13 +5,16 @@
  */
 package project;
 
+import project.exceptions.UnknownRequest;
 import project.statistics.StatResponse;
 import project.statistics.Statistics;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+
 import project.computation.ComputationRequest;
 import project.computation.ComputationResponse;
 import project.computation.ComputeResult;
@@ -20,14 +23,9 @@ import project.computation.VariablesMap;
 import project.exceptions.WrongNumberOfArguments;
 
 /**
- *
  * @author massi
  */
 public class ClientHandler extends Thread {
-
-    private enum RequestType {
-        QUIT_REQUEST, STAT_REQUEST, COMPUTATION_REQUEST;
-    }
 
     private final Socket socket;
     private String response;
@@ -46,23 +44,47 @@ public class ClientHandler extends Thread {
 
             printWriter.println("Waiting for requests...");
             String requestLine;
+
+            RequestTypeParser requestParser;
+
             loop:
             while (true) {
                 try {
-                    requestLine = bufferedReader.readLine();
-                    inspectComputationRequest(requestLine);
-                    switch (getRequestType(requestLine)) {
-                        case QUIT_REQUEST:
+                    String requestLine2 = bufferedReader.readLine();
+                    requestParser = new RequestTypeParser(requestLine2);
+
+                    switch (requestParser.getRequestType()) {
+                        case QUIT_REQUEST -> {
                             break loop;
-                        case STAT_REQUEST:
-                            processStatRequest(requestLine);
-                            break;
-                        case COMPUTATION_REQUEST:
-                            processComputationRequest(requestLine);
-                            break;
+                        }
+                        case STAT_REQUEST -> {
+                            processStatRequest(requestLine2);
+                        }
+                        case COMPUTATION_REQUEST -> {
+                            processComputationRequest(requestLine2);
+                        }
+                        case UNKNOWN_REQUEST -> {
+                            throw new UnknownRequest();
+                        }
                     }
+
+
+//                    requestLine = bufferedReader.readLine();
+//                    inspectComputationRequest(requestLine);
+//                    switch (getRequestType(requestLine)) {
+//                        case QUIT_REQUEST:
+//                            break loop;
+//                        case STAT_REQUEST:
+//                            processStatRequest(requestLine);
+//                            break;
+//                        case COMPUTATION_REQUEST:
+//                            processComputationRequest(requestLine);
+//                            break;
+//                        case UNKNOWN_REQUEST:
+//                            break;
+//                    }
                     printWriter.println(response);
-                } catch (IllegalArgumentException | WrongNumberOfArguments e) {
+                } catch (IllegalArgumentException | WrongNumberOfArguments | UnknownRequest e) {
                     System.out.println("[Client Handler]: " + e.getMessage());
                     printWriter.println("ERR;" + e.getMessage());
                 }
