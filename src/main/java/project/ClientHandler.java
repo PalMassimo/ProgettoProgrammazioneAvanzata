@@ -29,6 +29,7 @@ public class ClientHandler extends Thread {
 
     private final Socket socket;
     private String response;
+//    private RequestParser requestParser;
 
     public ClientHandler(Socket socket) {
         this.socket = socket;
@@ -45,44 +46,20 @@ public class ClientHandler extends Thread {
             printWriter.println("Waiting for requests...");
             String requestLine;
 
-            RequestTypeParser requestParser;
-
             loop:
             while (true) {
                 try {
-                    String requestLine2 = bufferedReader.readLine();
-                    requestParser = new RequestTypeParser(requestLine2);
+                    requestLine = bufferedReader.readLine();
+//                    requestParser = new RequestParser(requestLine);
 
-                    switch (requestParser.getRequestType()) {
+                    switch (RequestParser.parseRequest(requestLine)) {
                         case QUIT_REQUEST -> {
                             break loop;
                         }
-                        case STAT_REQUEST -> {
-                            processStatRequest(requestLine2);
-                        }
-                        case COMPUTATION_REQUEST -> {
-                            processComputationRequest(requestLine2);
-                        }
-                        case UNKNOWN_REQUEST -> {
-                            throw new UnknownRequest();
-                        }
+                        case STAT_REQUEST -> processStatRequest(requestLine);
+                        case COMPUTATION_REQUEST -> processComputationRequest(requestLine);
+                        case UNKNOWN_REQUEST -> throw new UnknownRequest();
                     }
-
-
-//                    requestLine = bufferedReader.readLine();
-//                    inspectComputationRequest(requestLine);
-//                    switch (getRequestType(requestLine)) {
-//                        case QUIT_REQUEST:
-//                            break loop;
-//                        case STAT_REQUEST:
-//                            processStatRequest(requestLine);
-//                            break;
-//                        case COMPUTATION_REQUEST:
-//                            processComputationRequest(requestLine);
-//                            break;
-//                        case UNKNOWN_REQUEST:
-//                            break;
-//                    }
                     printWriter.println(response);
                 } catch (IllegalArgumentException | WrongNumberOfArguments | UnknownRequest e) {
                     System.out.println("[Client Handler]: " + e.getMessage());
@@ -187,7 +164,7 @@ public class ClientHandler extends Thread {
                 throw new IllegalArgumentException("bad syntax variable name");
             }
 
-            if (!minValue.matches("(\\-)?[0-9]+(\\.[0-9]+)?")) {
+            if (!minValue.matches("(-)?[0-9]+(\\.[0-9]+)?")) {
                 throw new IllegalArgumentException("bad syntax min value");
             }
 
@@ -195,7 +172,7 @@ public class ClientHandler extends Thread {
                 throw new IllegalArgumentException("bad syntax step size");
             }
 
-            if (!maxValue.matches("(\\-)?[0-9]+(\\.[0-9]+)?")) {
+            if (!maxValue.matches("(-)?[0-9]+(\\.[0-9]+)?")) {
                 throw new IllegalArgumentException("bad syntax max value");
             }
 
