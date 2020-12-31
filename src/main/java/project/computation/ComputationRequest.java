@@ -10,10 +10,10 @@ import java.util.Set;
  */
 public class ComputationRequest {
 
-    private final String computationKind;
-    private final String valuesKind;
-    private final Set<String> expressions = new HashSet<>();
-    private final String variableValuesFunction;
+    private final String computationKind;                       // MIN, MAX, LIST or COUNT
+    private final String valuesKind;                            // GRID, LIST
+    private final String variableValuesFunction;                // e.g. x0:-1:0.1:1,x1:10:2:20, ...
+    private final Set<String> expressions = new HashSet<>();    // e.g. (x0+5)-x1
 
     public ComputationRequest(String computationRequest) {
         String[] tokens = computationRequest.split(";");
@@ -23,7 +23,7 @@ public class ComputationRequest {
         buildExpressionSet(computationRequest.split(";"));
     }
 
-    public Set<String> getExpression() {
+    public Set<String> getExpressions() {
         return expressions;
     }
 

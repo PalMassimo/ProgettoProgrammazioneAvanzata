@@ -64,7 +64,7 @@ public class ClientHandler extends Thread {
             }
 
             System.out.println("[Client Handler]: closed connection from: " + socket.getRemoteSocketAddress());
-            printWriter.println("BYE BYE");
+            printWriter.println("BYE BYE");//TODO: delete this statement before send the project
             Main.decreaseActiveConnection();
             //release resources
             bufferedReader.close();
@@ -90,7 +90,7 @@ public class ClientHandler extends Thread {
         ComputationRequest computationRequest = new ComputationRequest(computationRequestLine);
         VariablesMap variablesMap = new VariablesMap(computationRequest.getVariableValuesFunction());
         Tuples tuples = new Tuples(variablesMap, computationRequest.getValuesKind());
-        ComputeResult computeResult = new ComputeResult(computationRequest.getExpression(),
+        ComputeResult computeResult = new ComputeResult(computationRequest.getExpressions(),
                 tuples, computationRequest.getComputationKind());
         ComputationResponse computationResponse = new ComputationResponse(computeResult.getFinalResult());
         long endComputationTime = System.currentTimeMillis();

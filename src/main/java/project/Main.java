@@ -11,7 +11,6 @@ import java.net.Socket;
 public class Main {
 
     public static final int PORT_NUMBER = 8080;
-    //    private static final int maxConnection = Runtime.getRuntime().availableProcessors();
     private static int activeConnections = 0;
 
     public static void main(String[] args) {
