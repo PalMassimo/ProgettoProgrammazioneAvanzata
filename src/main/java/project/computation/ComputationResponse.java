@@ -23,16 +23,8 @@ public class ComputationResponse {
 
     }
 
-    public String getResponseCode() {
-        return responseCode;
-    }
-
     public double getComputationTime() {
         return computationTime;
-    }
-
-    public double getResult() {
-        return result;
     }
 
     public String getResponse() {

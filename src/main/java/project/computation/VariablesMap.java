@@ -1,7 +1,6 @@
 package project.computation;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -43,10 +42,6 @@ public class VariablesMap {
 
     public Set<String> getVariablesName() {
         return variablesValuesMap.keySet();
-    }
-
-    private void checkCorrectness(String variableValuesFunction) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

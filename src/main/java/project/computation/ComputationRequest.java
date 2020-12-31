@@ -1,5 +1,6 @@
 package project.computation;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +16,7 @@ public class ComputationRequest {
     private final String variableValuesFunction;
 
     public ComputationRequest(String computationRequest) {
-        String tokens[] = computationRequest.split(";");
+        String[] tokens = computationRequest.split(";");
         this.computationKind = tokens[0].split("_")[0];
         this.valuesKind = tokens[0].split("_")[1];
         this.variableValuesFunction = tokens[1];
@@ -39,8 +40,6 @@ public class ComputationRequest {
     }
 
     private void buildExpressionSet(String[] tokensComputationRequest) {
-        for (int i = 2; i < tokensComputationRequest.length; i++) {
-            this.expressions.add(tokensComputationRequest[i]);
-        }
+        this.expressions.addAll(Arrays.asList(tokensComputationRequest).subList(2, tokensComputationRequest.length));
     }
 }

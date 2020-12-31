@@ -1,13 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package project;
 
-import project.exceptions.UnknownRequest;
-import project.statistics.StatResponse;
-import project.statistics.Statistics;
+import project.computation.ComputationRequest;
+import project.computation.ComputationResponse;
+import project.computation.ComputeResult;
+import project.computation.Tuples;
+import project.computation.VariablesMap;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,12 +13,11 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-import project.computation.ComputationRequest;
-import project.computation.ComputationResponse;
-import project.computation.ComputeResult;
-import project.computation.Tuples;
-import project.computation.VariablesMap;
+import project.exceptions.UnknownRequest;
 import project.exceptions.WrongNumberOfArguments;
+import project.statistics.StatResponse;
+import project.statistics.Statistics;
+import project.utils.RequestParser;
 
 /**
  * @author massi
@@ -28,8 +25,7 @@ import project.exceptions.WrongNumberOfArguments;
 public class ClientHandler extends Thread {
 
     private final Socket socket;
-    private String response;
-//    private RequestParser requestParser;
+    private String successResponse;
 
     public ClientHandler(Socket socket) {
         this.socket = socket;
@@ -50,7 +46,7 @@ public class ClientHandler extends Thread {
             while (true) {
                 try {
                     requestLine = bufferedReader.readLine();
-//                    requestParser = new RequestParser(requestLine);
+                    if (requestLine == null) throw new NullPointerException("Client has closed connection brutally");
 
                     switch (RequestParser.parseRequest(requestLine)) {
                         case QUIT_REQUEST -> {
@@ -60,21 +56,23 @@ public class ClientHandler extends Thread {
                         case COMPUTATION_REQUEST -> processComputationRequest(requestLine);
                         case UNKNOWN_REQUEST -> throw new UnknownRequest();
                     }
-                    printWriter.println(response);
-                } catch (IllegalArgumentException | WrongNumberOfArguments | UnknownRequest e) {
+                    printWriter.println(successResponse);
+                } catch (IllegalArgumentException | WrongNumberOfArguments | UnknownRequest | NullPointerException e) {
                     System.out.println("[Client Handler]: " + e.getMessage());
                     printWriter.println("ERR;" + e.getMessage());
                 }
             }
 
+            System.out.println("[Client Handler]: closed connection from: " + socket.getRemoteSocketAddress());
             printWriter.println("BYE BYE");
+            Main.decreaseActiveConnection();
             //release resources
             bufferedReader.close();
             printWriter.close();
             socket.close();
 
         } catch (IOException e) {
-            System.out.println("[Client Handler]: Something went wrong");
+            System.out.println("[Client Handler]: IO exception was thrown");
             System.exit(0);
         }
     }
@@ -84,7 +82,7 @@ public class ClientHandler extends Thread {
         StatResponse statResponse = new StatResponse(statRequestLine);
         long endComputationTime = System.currentTimeMillis();
         statResponse.setComputationTime(Math.pow(10, -3) * (endComputationTime - startComputationTime));
-        this.setResponse(statResponse.getResponse());
+        this.setSuccessResponse(statResponse.getResponse());
     }
 
     private void processComputationRequest(String computationRequestLine) {
@@ -98,88 +96,16 @@ public class ClientHandler extends Thread {
         long endComputationTime = System.currentTimeMillis();
 
         computationResponse.setComputationTime(Math.pow(10, -3) * (endComputationTime - startComputationTime));
-        this.setResponse(computationResponse.getResponse());
+        this.setSuccessResponse(computationResponse.getResponse());
+
         Statistics.addOkResponse();
         Statistics.updateAverageOkResponseTime(computationResponse.getComputationTime());
         Statistics.updateMaxOkResponseTime(computationResponse.getComputationTime());
 
     }
 
-    public void setResponse(String response) {
-        this.response = response;
-    }
-
-    private RequestType getRequestType(String requestLine) {
-        switch (requestLine.split(";")[0]) {
-            case "BYE":
-                return RequestType.QUIT_REQUEST;
-
-            case "STAT_REQS", "STAT_AVG_TIME", "STAT_MAX_TIME":
-                return RequestType.STAT_REQUEST;
-
-            case "MAX_LIST", "MIN_LIST", "AVG_LIST", "COUNT_LIST":
-            case "MAX_GRID", "MIN_GRID", "AVG_GRID", "COUNT_GRID":
-                return RequestType.COMPUTATION_REQUEST;
-
-            default:
-                return null; //SISTEMA
-        }
-    }
-
-    private void inspectComputationRequest(String requestLine) {
-        //check if it is a stat or a quit request
-        switch (requestLine) {
-            case "BYE", "STAT_REQS", "STAT_AVG_TIME", "STAT_MAX_TIME":
-                return;
-        }
-        //the only possibility is that it can be a computation request
-        String[] tokens = requestLine.split(";");
-        if (tokens.length < 3) {
-            throw new WrongNumberOfArguments("wrong number of elements");
-        }
-
-        switch (tokens[0]) {
-            case "MIN_LIST", "MAX_LIST", "AVG_LIST", "COUNT_LIST":
-            case "MIN_GRID", "MAX_GRID", "AVG_GRID", "COUNT_GRID":
-                break;
-            default:
-                throw new IllegalArgumentException("unknown operation");
-        }
-
-        //check second token
-        // example variableValuesFunction: "x0:-1:0.1:1,x1:10:2:20"
-        String variableValuesFunction = tokens[1];
-        for (String variableValues : variableValuesFunction.split(",")) {
-
-            if (variableValues.split(":").length != 4) {
-                throw new WrongNumberOfArguments("wrong number of variable parameters");
-            }
-
-            String variableName = variableValues.split(":")[0];
-            String minValue = variableValues.split(":")[1];
-            String stepSize = variableValues.split(":")[2];
-            String maxValue = variableValues.split(":")[3];
-
-            if (!variableName.matches("[a-z][a-z0-9]*")) {
-                throw new IllegalArgumentException("bad syntax variable name");
-            }
-
-            if (!minValue.matches("(-)?[0-9]+(\\.[0-9]+)?")) {
-                throw new IllegalArgumentException("bad syntax min value");
-            }
-
-            if (!stepSize.matches("[0-9]+(\\.[0-9]+)?") || Double.parseDouble(stepSize) == 0.0) {
-                throw new IllegalArgumentException("bad syntax step size");
-            }
-
-            if (!maxValue.matches("(-)?[0-9]+(\\.[0-9]+)?")) {
-                throw new IllegalArgumentException("bad syntax max value");
-            }
-
-            //TODO:manca il controllo del valore dello step size:
-            //e.g. x0:-1:0.3:1 -> valore dello step size non va bene
-        }
-
+    public void setSuccessResponse(String successResponse) {
+        this.successResponse = successResponse;
     }
 
 }

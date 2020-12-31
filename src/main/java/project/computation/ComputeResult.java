@@ -25,7 +25,6 @@ public class ComputeResult {
             for (Map<String, Double> tuple : tuples.getTuples()) {
                 Parser parser = new Parser(expression);
                 Node root = parser.parse();
-//            replaceVariablesWithTheirValues(root, tuple);
                 allResults.add(computeExpression(root, tuple));
             }
         }
@@ -47,8 +46,8 @@ public class ComputeResult {
             throw new IllegalArgumentException("Unknown Variable " + ((Variable) node).getName());
         } else {
             //node is an Operator here
-            double rightValue = computeExpression(((Operator) (node)).getChildren().get(1), tuple);
-            double leftValue = computeExpression(((Operator) (node)).getChildren().get(0), tuple);
+            double rightValue = computeExpression(node.getChildren().get(1), tuple);
+            double leftValue = computeExpression(node.getChildren().get(0), tuple);
             return ((Operator) node).getType().getFunction().apply(new double[]{leftValue, rightValue});
         }
 
@@ -60,23 +59,13 @@ public class ComputeResult {
 
     private double computeFinalResult(String computationKind) {
 
-        switch (computationKind) {
-
-            case "MAX":
-                return Collections.max(allResults);
-            case "MIN":
-                return Collections.min(allResults);
-            case "AVG":
-                return calculateAvg();
-            case "COUNT":
-                return allResults.size();
-//            default:
-//                //SISTEMA
-//                System.out.println("Unsupported Operation");
-//                System.exit(0);
-//                break;
-        }
-        return 0;//correggi
+        return switch (computationKind) {
+            case "MAX" -> Collections.max(allResults);
+            case "MIN" -> Collections.min(allResults);
+            case "AVG" -> calculateAvg();
+            case "COUNT" -> allResults.size();
+            default -> 0; //TODO: fix
+        };
     }
 
     private double calculateAvg() {

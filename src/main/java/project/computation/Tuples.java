@@ -17,17 +17,12 @@ public class Tuples {
     public Tuples(VariablesMap variablesMap, String valuesKind) {
 
         switch (valuesKind) {
-
-            case "LIST":
-                createTuplesByList(variablesMap);
-                break;
-            case "GRID":
-                createTuplesByGrid(variablesMap);
-                break;
-
-            default:
+            case "LIST" -> createTuplesByList(variablesMap);
+            case "GRID" -> createTuplesByGrid(variablesMap);
+            default -> {
                 System.out.println("unknown value kind");
                 System.exit(0);
+            }
         }
 
     }
