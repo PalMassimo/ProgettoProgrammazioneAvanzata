@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4e145a2-251e-426a-8df4-51001b7cfe9b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/testers/computationrequesttesters/VariableValueTester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/computation/Tuples.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/computation/Tuples.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/computation/VariableValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/computation/VariableValues.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/computation/VariablesMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/computation/VariablesMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testers/ComputationRequestTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testers/computationrequesttesters/ComputationRequestTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testers/VariablesMapTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testers/computationrequesttesters/VariablesMapTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testers/computationrequesttesters/VariableValueTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testers/computationrequesttesters/VariableValueTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testers/computationrequesttesters/VariablesMapTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testers/computationrequesttesters/VariablesMapTester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/project/computation/Tuples.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/computation/Tuples.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/project/computation/VariableValues.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/computation/VariableValues.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/project/computation/VariablesMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/computation/VariablesMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testers/ComputationRequestTester.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/testers/computationrequesttesters/VariableValueTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testers/computationrequesttesters/VariableValueTester.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/testers/computationrequesttesters/VariablesMapTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testers/computationrequesttesters/VariablesMapTester.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +32,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1mQqin6fznAE9U01Wz7smZqSNUV" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -46,8 +46,8 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.TupleTester.tupleTester">
-    <configuration name="ComputationRequestTester" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ComputeResultTester.computeResultTest (2)">
+    <configuration name="ComputeResultTester.computeResultTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgrammazioneAvanzataProject" />
       <extension name="coverage">
         <pattern>
@@ -56,29 +56,46 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testers.computationrequesttesters" />
-      <option name="MAIN_CLASS_NAME" value="testers.computationrequesttesters.ComputationRequestTester" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TupleTester.tupleTester" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgrammazioneAvanzataProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testers.computationrequesttesters.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testers.computationrequesttesters" />
-      <option name="MAIN_CLASS_NAME" value="testers.computationrequesttesters.TupleTester" />
-      <option name="METHOD_NAME" value="tupleTester" />
+      <option name="MAIN_CLASS_NAME" value="testers.computationrequesttesters.ComputeResultTester" />
+      <option name="METHOD_NAME" value="computeResultTest(java.lang.String)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VariableValueTester.variableValueTester2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ComputeResultTester.computeResultTest (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgrammazioneAvanzataProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testers.computationrequesttesters.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testers.computationrequesttesters" />
+      <option name="MAIN_CLASS_NAME" value="testers.computationrequesttesters.ComputeResultTester" />
+      <option name="METHOD_NAME" value="computeResultTest(java.lang.String,double)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ComputeResultTester.computeResultTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgrammazioneAvanzataProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testers.computationrequesttesters.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testers.computationrequesttesters" />
+      <option name="MAIN_CLASS_NAME" value="testers.computationrequesttesters.ComputeResultTester" />
+      <option name="METHOD_NAME" value="computeResultTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VariableValueTester" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgrammazioneAvanzataProject" />
       <extension name="coverage">
         <pattern>
@@ -88,24 +105,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="testers.computationrequesttesters" />
       <option name="MAIN_CLASS_NAME" value="testers.computationrequesttesters.VariableValueTester" />
-      <option name="METHOD_NAME" value="variableValueTester2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VariablesMapTester.variablesMapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgrammazioneAvanzataProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testers.computationrequesttesters.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testers.computationrequesttesters" />
-      <option name="MAIN_CLASS_NAME" value="testers.computationrequesttesters.VariablesMapTester" />
-      <option name="METHOD_NAME" value="variablesMapTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,11 +126,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TupleTester.tupleTester" />
+        <item itemvalue="JUnit.ComputeResultTester.computeResultTest (2)" />
+        <item itemvalue="JUnit.ComputeResultTester.computeResultTest (1)" />
+        <item itemvalue="JUnit.ComputeResultTester.computeResultTest" />
         <item itemvalue="JUnit.testers.computationrequesttesters in ProgrammazioneAvanzataProject" />
-        <item itemvalue="JUnit.ComputationRequestTester" />
-        <item itemvalue="JUnit.VariablesMapTester.variablesMapTest" />
-        <item itemvalue="JUnit.VariableValueTester.variableValueTester2" />
+        <item itemvalue="JUnit.VariableValueTester" />
       </list>
     </recent_temporary>
   </component>
@@ -155,16 +155,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/project/utils/RequestParser.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 public class VariableValues {
 
     private final String variableName;
-    private final double[] values;
+    private final Double[] values;
 
     public VariableValues(String variableWithValue) {
 
@@ -20,8 +20,8 @@ public class VariableValues {
         double maxValue = Double.parseDouble(variableWithValue.split(":")[3]);
 
         this.values = IntStream.range(0, (int) ((maxValue - minValue) / stepSize) + 1)
-                .mapToDouble(indexValue -> minValue + indexValue * stepSize)
-                .toArray();
+                .mapToObj(indexValue -> minValue + indexValue * stepSize)
+                .toArray(Double[]::new);
 
     }
 
@@ -29,7 +29,7 @@ public class VariableValues {
         return variableName;
     }
 
-    public double[] getValues() {
+    public Double[] getValues() {
         return values;
     }
 
