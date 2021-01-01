@@ -1,4 +1,4 @@
-package testers;
+package testers.computationrequesttesters;
 
 import org.junit.jupiter.api.Test;
 import project.computation.ComputationRequest;

@@ -36,8 +36,8 @@ public class Tuples {
         int listLength = getListLength(variablesMap);
         for (int i = 0; i < listLength; i++) {
             Map<String, Double> tuple = new HashMap<>();
-            for (String variable : variablesMap.getVariablesValuesMap().keySet()) {
-                tuple.put(variable, variablesMap.getVariablesValuesMap().get(variable)[i]);
+            for (String variable : variablesMap.keySet()) {
+                tuple.put(variable, variablesMap.get(variable)[i]);
             }
             this.tuples.add(tuple);
         }
@@ -47,8 +47,8 @@ public class Tuples {
 
         //set containing the
         Set<Integer> numberOfValuesTakenByEachVariables = new HashSet<>();
-        for (String variable : variablesMap.getVariablesValuesMap().keySet()) {
-            numberOfValuesTakenByEachVariables.add(variablesMap.getVariablesValuesMap().get(variable).length);
+        for (String variable : variablesMap.keySet()) {
+            numberOfValuesTakenByEachVariables.add(variablesMap.get(variable).length);
         }
 
         if (numberOfValuesTakenByEachVariables.size() == 1) {
@@ -62,7 +62,7 @@ public class Tuples {
 
     private void createTuplesByGrid(VariablesMap variablesMap) {
 
-        CartesianProduct cartesianProduct = new CartesianProduct(variablesMap.getVariablesValuesMap());
+        CartesianProduct cartesianProduct = new CartesianProduct(variablesMap);
         this.tuples = cartesianProduct.getTuples();
 
     }

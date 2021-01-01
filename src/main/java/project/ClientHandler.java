@@ -57,9 +57,13 @@ public class ClientHandler extends Thread {
                         case UNKNOWN_REQUEST -> throw new UnknownRequest();
                     }
                     printWriter.println(successResponse);
-                } catch (IllegalArgumentException | WrongNumberOfArguments | UnknownRequest | NullPointerException e) {
+                } catch (IllegalArgumentException | WrongNumberOfArguments | UnknownRequest e) {
                     System.out.println("[Client Handler]: " + e.getMessage());
                     printWriter.println("ERR;" + e.getMessage());
+                } catch (NullPointerException e){
+                    System.out.println("[Client Handler]: " + e.getMessage());
+                    printWriter.println("ERR;" + e.getMessage());
+                    break;
                 }
             }
 

@@ -1,14 +1,15 @@
 
 package project.computation;
 
+import java.util.stream.IntStream;
+
 /**
- *
  * @author massi
  */
 public class VariableValues {
 
     private final String variableName;
-    private Double[] values;
+    private final double[] values;
 
     public VariableValues(String variableWithValue) {
 
@@ -18,26 +19,19 @@ public class VariableValues {
         double stepSize = Double.parseDouble(variableWithValue.split(":")[2]);
         double maxValue = Double.parseDouble(variableWithValue.split(":")[3]);
 
-        setValues(minValue, stepSize, maxValue);
+        this.values = IntStream.range(0, (int) ((maxValue - minValue) / stepSize) + 1)
+                .mapToDouble(indexValue -> minValue + indexValue * stepSize)
+                .toArray();
+
     }
-    
+
     public String getVariableName() {
         return variableName;
     }
 
-    public Double[] getValues() {
+    public double[] getValues() {
         return values;
     }
 
-    private void setValues(double minValue, double stepSize, double maxValue) {
-
-        int arrayLength = (int) ((maxValue - minValue) / stepSize) + 1;
-        this.values = new Double[arrayLength];
-
-        for (int i = 0; i < values.length; i++) {
-            values[i] = minValue + i * stepSize;
-        }
-
-    }
 
 }

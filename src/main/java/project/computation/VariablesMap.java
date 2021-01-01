@@ -1,47 +1,23 @@
 package project.computation;
 
+import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
 
 /**
- *
  * @author massi
  */
-public class VariablesMap {
+public class VariablesMap extends HashMap<String, double[]> {
 
-    private final Map<String, Double[]> variablesValuesMap = new HashMap<>();
-    private final int numberOfVariables;
-    private final Set<String> variableNames;
-
+    // variable values function e.g. x0:-1:0.1:1,x2:-2:1:1
     public VariablesMap(String variableValuesFunction) {
 
-        String[] variablesValues = variableValuesFunction.split(",");
-        this.numberOfVariables = variablesValues.length;
+        super();
 
-        for (String iterator : variablesValues) {
-            VariableValues variableValue = new VariableValues(iterator);
-            this.variablesValuesMap.put(variableValue.getVariableName(), variableValue.getValues());
-        }
+        String[] variableValuesLine = variableValuesFunction.split(",");
 
-        this.variableNames = variablesValuesMap.keySet();
+        Arrays.stream(variableValuesLine).map(VariableValues::new)
+                .forEach(variableValue -> put(variableValue.getVariableName(), variableValue.getValues()));
 
-    }
-
-    public Set<String> getVariableNames() {
-        return variableNames;
-    }
-
-    public Map<String, Double[]> getVariablesValuesMap() {
-        return variablesValuesMap;
-    }
-
-    public int getNumberOfVariables() {
-        return numberOfVariables;
-    }
-
-    public Set<String> getVariablesName() {
-        return variablesValuesMap.keySet();
     }
 
 }
