@@ -1,5 +1,9 @@
 package project.computation;
 
+import jdk.jfr.ValueDescriptor;
+import project.utils.CartesianProduct;
+import project.utils.ValuesKind;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -14,11 +18,11 @@ public class Tuples {
 
     private Set<Map<String, Double>> tuples;
 
-    public Tuples(VariablesMap variablesMap, String valuesKind) {
+    public Tuples(VariablesMap variablesMap, ValuesKind valuesKind) {
 
         switch (valuesKind) {
-            case "LIST" -> createTuplesByList(variablesMap);
-            case "GRID" -> createTuplesByGrid(variablesMap);
+            case LIST -> createTuplesByList(variablesMap);
+            case GRID -> createTuplesByGrid(variablesMap);
             default -> {
                 System.out.println("unknown value kind");
                 System.exit(0);

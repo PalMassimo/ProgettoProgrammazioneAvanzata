@@ -1,6 +1,5 @@
 package project.utils;
 
-import project.RequestType;
 import project.exceptions.WrongNumberOfArguments;
 
 public class RequestParser {

@@ -5,13 +5,16 @@ import project.medvet.Node;
 import project.medvet.Operator;
 import project.medvet.Parser;
 import project.medvet.Variable;
+import project.utils.ComputationKind;
+
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import static project.utils.ComputationKind.*;
+
 /**
- *
  * @author massi
  */
 public class ComputeResult {
@@ -19,7 +22,7 @@ public class ComputeResult {
     private final Set<Double> allResults = new HashSet<>();
     private final double finalResult;
 
-    public ComputeResult(Set<String> expressions, Tuples tuples, String computationKind) {
+    public ComputeResult(Set<String> expressions, Tuples tuples, ComputationKind computationKind) {
 
         for (String expression : expressions) {
             for (Map<String, Double> tuple : tuples.getTuples()) {
@@ -57,22 +60,32 @@ public class ComputeResult {
         return finalResult;
     }
 
-    private double computeFinalResult(String computationKind) {
+    private double computeFinalResult(ComputationKind computationKind) {
 
-        return switch (computationKind) {
-            case "MAX" -> Collections.max(allResults);
-            case "MIN" -> Collections.min(allResults);
-            case "AVG" -> calculateAvg();
-            case "COUNT" -> allResults.size();
-            default -> 0; //TODO: fix
-        };
+        if (computationKind == MAX) {
+            return Collections.max(allResults);
+        } else if (computationKind == MIN) {
+            return Collections.min(allResults);
+        } else if (computationKind == AVG) {
+            return calculateAvg();
+        } else {
+            return allResults.size();
+        }
+
+//        return switch (computationKind) {
+//            case MAX -> ;
+//            case "MIN" ->
+//            case "AVG" -> calculateAvg();
+//            case "COUNT" -> allResults.size();
+//            default -> 0; //TODO: fix
+//        };
     }
 
     private double calculateAvg() {
-        double sum = 0;
-        for (Double real : allResults) {
-            sum = sum + real;
-        }
+        double sum = allResults.stream().mapToDouble(Double::doubleValue).sum();
+//        for (Double real : allResults) {
+//            sum = sum + real;
+//        }
 
         return sum / allResults.size();
     }
