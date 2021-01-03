@@ -1,8 +1,8 @@
 project\computation\VariablesMapTest.class
+project\RegexRequestTypeTest.class
 project\computation\TupleTest.class
 project\computation\ComputationRequestTest.class
 project\RequestParserTest.class
-project\regexRequestTypeTest.class
 project\computation\VariableValueTest.class
 project\computation\ComputeResultTest.class
 project\ExceptionsTest.class

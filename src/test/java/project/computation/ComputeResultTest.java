@@ -12,7 +12,7 @@ public class ComputeResultTest {
 
     @ParameterizedTest
     @CsvSource({"'MAX_GRID;x0:0:5:51,x1:0:4:80;(x0+x1)', '130.0'", "'AVG_LIST;x0:-1:1:1,x1:-1:1:1;(x0+x1)', '0.0'"})
-    public void computeResultTest(String requestLine, double result){
+    public void computeResultTest(String requestLine, double result)  {
         assertSame(RequestType.COMPUTATION_REQUEST, RequestParser.parseRequest(requestLine));
         ComputationRequest computationRequest = new ComputationRequest(requestLine);
         VariablesMap variablesMap = new VariablesMap(computationRequest.getVariableValuesFunction());

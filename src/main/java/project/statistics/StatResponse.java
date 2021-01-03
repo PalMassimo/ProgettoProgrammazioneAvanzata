@@ -30,13 +30,13 @@ public class StatResponse {
 
         switch (statRequestType) {
             case "STAT_AVG_TIME":
-                return String.valueOf(Statistics.getAverageOkResponseTime());
+                return String.format("%.3f", Statistics.getAverageOkResponseTime()).replace(",", ".");
             case "STAT_MAX_TIME":
-                return String.valueOf(Statistics.getMaxOkResponseTime());
+                return String.format("%.3f", Statistics.getMaxOkResponseTime()).replace(",", ".");
             case "STAT_REQS":
                 return String.valueOf(Statistics.getOkResponses());
-            default://SISTEMA
-                System.exit(0);
+            default:
+                System.out.println("ERROR: unknown statRequestType.");
                 return "";
         }
 

@@ -22,7 +22,7 @@ import project.utils.RequestParser;
 /**
  * @author massi
  */
-public class ClientHandler extends Thread {
+public class ClientHandler implements Runnable {
 
     private final Socket socket;
     private String successResponse;
@@ -39,6 +39,7 @@ public class ClientHandler extends Thread {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter printWriter = new PrintWriter(socket.getOutputStream(), true);
 
+            System.out.println("New connection from: " + socket.getRemoteSocketAddress());
             printWriter.println("Waiting for requests...");
             String requestLine;
 
@@ -62,6 +63,7 @@ public class ClientHandler extends Thread {
                     printWriter.println("ERR;" + e.getMessage());
                 } catch (NullPointerException e){
                     System.out.println("[Client Handler]: " + e.getMessage());
+                    System.out.println("                   from client "+socket.getRemoteSocketAddress());
                     printWriter.println("ERR;" + e.getMessage());
                     break;
                 }
@@ -69,7 +71,7 @@ public class ClientHandler extends Thread {
 
             System.out.println("[Client Handler]: closed connection from: " + socket.getRemoteSocketAddress());
             printWriter.println("BYE BYE");//TODO: delete this statement before send the project
-            Main.decreaseActiveConnection();
+//            Main.decreaseActiveConnection();
             //release resources
             bufferedReader.close();
             printWriter.close();

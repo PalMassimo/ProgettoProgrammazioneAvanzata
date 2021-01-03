@@ -1,5 +1,6 @@
 package project;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import project.exceptions.WrongNumberOfArguments;
@@ -17,7 +18,7 @@ public class ExceptionsTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"COUNT_GRID;è:0:0.1:1,x1:-10:1:20;(x1*x0)", "AVG_GRID;x0:-1:-0.1:1;x0"})
+    @ValueSource(strings = {"COUNT_GRID;è:0:0.1:1,x1:-10:1:20;(x1*x0)", "AVG_GRID;x0:-1:-0.1:1;x0", "COUNT_LIST;x0:-1:-0.1:-100;x0"})
     public void testIllegalArgumentException(String badComputationRequest) {
         assertThrows(IllegalArgumentException.class, () -> RequestParser.parseRequest(badComputationRequest));
     }

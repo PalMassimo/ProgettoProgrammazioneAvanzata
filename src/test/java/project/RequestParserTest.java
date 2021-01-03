@@ -29,10 +29,9 @@ public class RequestParserTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"BY", "STAT_REQ", "STATMAX", "MINLIST;x4:-22:2:10,y0:-10:1:1,h33:0:5:15;"})
+    @ValueSource(strings = {"bye", "STAT_REQ", "STATMAX", "MINLIST;x4:-22:2:10,y0:-10:1:1,h33:0:5:15;"})
     public void unknownRequestTest(String computationRequestLine) {
         Assertions.assertSame(RequestType.UNKNOWN_REQUEST, RequestParser.parseRequest(computationRequestLine));
     }
-
 
 }

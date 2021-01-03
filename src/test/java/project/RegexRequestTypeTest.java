@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-public class regexRequestTypeTest {
+public class RegexRequestTypeTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"MAX_GRID", "MAX_LIST", "MIN_GRID", "MIN_LIST", "AVG_GRID", "AVG_LIST", "COUNT_GRID", "COUNT_LIST"})
@@ -21,13 +21,13 @@ public class regexRequestTypeTest {
     @ParameterizedTest
     @ValueSource(strings = {"STAT_REQS", "STAT_AVG_TIME", "STAT_MAX_TIME"})
     public void testStatRequestRegex(String computationRequest) {
-        Assertions.assertTrue(computationRequest.matches("STAT_(REQS|AVG|MAX)(_TIME)?"));
+        Assertions.assertTrue(computationRequest.matches("STAT_(REQS|(AVG|MAX)_TIME)"));
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"STAT", "STAT_", "STAT_MAX__TIME", "STAT_REQSAVG_TIME"})
+    @ValueSource(strings = {"STAT", "STAT_", "STAT_MAX__TIME", "STAT_AVG"})
     public void testStatRequestRegex2(String computationRequest) {
-        Assertions.assertFalse(computationRequest.matches("STAT_(REQS|AVG|MAX)(_TIME)?"));
+        Assertions.assertFalse(computationRequest.matches("STAT_(REQS|(AVG|MAX)_TIME)"));
     }
 
 

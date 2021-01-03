@@ -5,7 +5,7 @@ import project.exceptions.WrongNumberOfArguments;
 public class RequestParser {
 
     private final static String computationRequestRegex = "^(MAX|MIN|AVG|COUNT)_(LIST|GRID).*$";
-    private final static String statRequestRegex = "STAT_(REQS|AVG|MAX)(_TIME)?";
+    private final static String statRequestRegex = "STAT_(REQS|(AVG|MAX)_TIME)";
 
     public static RequestType parseRequest(String requestLine) {
         if (isQuitRequest(requestLine)) {
@@ -34,8 +34,9 @@ public class RequestParser {
                     " but got " + requestLine.split(";").length);
 
         String variableValuesFunction = requestLine.split(";")[1];
+        String[] variableValuesArray = variableValuesFunction.split(",");
 
-        for (String variableValues : variableValuesFunction.split(",")) {
+        for (String variableValues : variableValuesArray) {
 
             if (variableValues.split(":").length != 4) {
                 throw new WrongNumberOfArguments("Wrong number of variable parameters. Expected 4 but got " + variableValues.split(":").length);
@@ -60,6 +61,10 @@ public class RequestParser {
 
             if (!maxValue.matches("(-)?[0-9]+(\\.[0-9]+)?")) {
                 throw new IllegalArgumentException("Bad syntax max value");
+            }
+
+            if(Double.parseDouble(minValue)>Double.parseDouble(maxValue)){
+                throw new IllegalArgumentException("Min value cannot be greater than max value");
             }
 
             //TODO: check step size value:

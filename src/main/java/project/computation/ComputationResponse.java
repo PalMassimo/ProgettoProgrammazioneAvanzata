@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package project.computation;
 
 /**
@@ -11,13 +6,11 @@ package project.computation;
  */
 public class ComputationResponse {
 
-    private final String responseCode;
     private double computationTime;
     private final double result;
 
     public ComputationResponse(double result) {
 
-        this.responseCode = "OK";
         this.computationTime = 0;
         this.result = result;
 
@@ -28,10 +21,10 @@ public class ComputationResponse {
     }
 
     public String getResponse() {
-        return responseCode + ";" + computationTime + ";" + result;
+        return "OK;" + computationTime + ";" + result;
     }
 
     public void setComputationTime(double computationTime) {
-        this.computationTime = computationTime;
+        this.computationTime = Double.parseDouble(String.format("%.3f", computationTime).replace(",", "."));
     }
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package project.statistics;
 
 /**
@@ -19,17 +14,17 @@ public class Statistics {
         return maxOkResponseTime;
     }
 
-    public static void updateMaxOkResponseTime(double okResponseTime) {
-        if (okResponseTime > maxOkResponseTime) {
-            maxOkResponseTime = okResponseTime;
-        }
+    public synchronized static void updateMaxOkResponseTime(double okResponseTime) {
+
+        if (okResponseTime > maxOkResponseTime) maxOkResponseTime = okResponseTime;
+
     }
 
     public static double getAverageOkResponseTime() {
         return averageOkResponseTime;
     }
 
-    public static void updateAverageOkResponseTime(double anotherOkResponseTime) {
+    public synchronized static void updateAverageOkResponseTime(double anotherOkResponseTime) {
         averageOkResponseTime = averageOkResponseTime * (okResponses - 1) / okResponses
                 + anotherOkResponseTime / okResponses;
     }
@@ -38,7 +33,7 @@ public class Statistics {
         return okResponses;
     }
 
-    public static void addOkResponse() {
+    public synchronized static void addOkResponse() {
         okResponses++;
     }
 

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: project.regexRequestTypeTest
+Test set: project.RegexRequestTypeTest
 -------------------------------------------------------------------------------
-Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s - in project.regexRequestTypeTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in project.RegexRequestTypeTest

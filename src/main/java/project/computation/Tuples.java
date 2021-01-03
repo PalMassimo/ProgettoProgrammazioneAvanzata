@@ -59,7 +59,7 @@ public class Tuples {
             Iterator iterator = numberOfValuesTakenByEachVariables.iterator();
             return (int) iterator.next();
         } else {
-            throw new IllegalArgumentException("wrong number of values taken by one or more variables");
+            throw new IllegalArgumentException("Wrong number of values taken by one or more variables");
         }
 
     }

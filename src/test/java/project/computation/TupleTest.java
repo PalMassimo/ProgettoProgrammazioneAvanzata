@@ -13,7 +13,7 @@ import static project.utils.ValuesKind.LIST;
 public class TupleTest {
 
     @Test
-    public void tupleTester() {
+    public void tupleTester()  {
         VariablesMap variablesMap = new VariablesMap("x0:-1:1:1,x1:3:1:5");
         Tuples tuples = new Tuples(variablesMap, LIST);
         Set<Map<String, Double>> set = buildSet();
