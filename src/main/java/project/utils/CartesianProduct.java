@@ -11,8 +11,8 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- *
- * @author massi
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - A class that build a Cartesian Product
  */
 public class CartesianProduct<K, V> {
 

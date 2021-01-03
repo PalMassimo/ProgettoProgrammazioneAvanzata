@@ -2,7 +2,6 @@ package project.computation;
 
 import org.junit.jupiter.api.Test;
 import project.utils.ComputationKind;
-import project.utils.ValuesKind;
 
 import java.util.HashSet;
 import java.util.Set;

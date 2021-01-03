@@ -4,7 +4,8 @@ package project.computation;
 import java.util.stream.IntStream;
 
 /**
- * @author massi
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - A class that models a variable and his values
  */
 public class VariableValues {
 

@@ -6,26 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="b4e145a2-251e-426a-8df4-51001b7cfe9b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META_INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-unit-test.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-project.ExceptionsTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-project.ExceptionsTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-project.RequestParserTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-project.RequestParserTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-project.computation.ComputationRequestTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-project.computation.ComputationRequestTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-project.computation.ComputeResultTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-project.computation.ComputeResultTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-project.computation.TupleTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-project.computation.TupleTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-project.computation.VariableValueTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-project.computation.VariableValueTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-project.computation.VariablesMapTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-project.computation.VariablesMapTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-project.regexRequestTypeTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-project.regexRequestTypeTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/project.ExceptionsTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/project.ExceptionsTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/project.computation.ComputationRequestTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/project.computation.ComputationRequestTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/project.computation.ComputeResultTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/project.computation.ComputeResultTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/project.computation.TupleTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/project.computation.TupleTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/project.computation.VariableValueTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/project.computation.VariableValueTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/project.computation.VariablesMapTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/project.computation.VariablesMapTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/project.regexRequestTypeTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/project.regexRequestTypeTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/computation/ComputationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/computation/ComputationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/computation/ComputationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/computation/ComputationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/computation/ComputeResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/computation/ComputeResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/computation/Tuples.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/computation/Tuples.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/computation/VariableValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/computation/VariableValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/computation/VariablesMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/computation/VariablesMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/exceptions/UnknownRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/exceptions/UnknownRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/exceptions/WrongNumberOfArguments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/exceptions/WrongNumberOfArguments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/statistics/StatResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/statistics/StatResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/statistics/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/statistics/Statistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/utils/CartesianProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/utils/CartesianProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/utils/ComputationKind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/utils/ComputationKind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/utils/RequestParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/utils/RequestParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/utils/RequestType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/utils/RequestType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/utils/ValuesKind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/utils/ValuesKind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/client/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,26 +231,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/project/ClientHandler.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/project/ClientHandler.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/project/ClientHandler.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

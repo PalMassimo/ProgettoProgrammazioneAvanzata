@@ -17,10 +17,12 @@ import project.exceptions.UnknownRequest;
 import project.exceptions.WrongNumberOfArguments;
 import project.statistics.StatResponse;
 import project.statistics.Statistics;
+import project.utils.Logger;
 import project.utils.RequestParser;
 
 /**
- * @author massi
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - A thread that take care a single client
  */
 public class ClientHandler implements Runnable {
 
@@ -39,15 +41,17 @@ public class ClientHandler implements Runnable {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter printWriter = new PrintWriter(socket.getOutputStream(), true);
 
-            System.out.println("New connection from: " + socket.getRemoteSocketAddress());
-            printWriter.println("Waiting for requests...");
+            Logger.log("New connection from: " + socket.getRemoteSocketAddress());
+            printWriter.println("Waiting for request...");
             String requestLine;
 
             loop:
             while (true) {
                 try {
                     requestLine = bufferedReader.readLine();
-                    if (requestLine == null) throw new NullPointerException("Client has closed connection brutally");
+
+                    if (requestLine == null)
+                        throw new NullPointerException("Client " + socket.getRemoteSocketAddress() + " abort the connection");
 
                     switch (RequestParser.parseRequest(requestLine)) {
                         case QUIT_REQUEST -> {
@@ -59,26 +63,23 @@ public class ClientHandler implements Runnable {
                     }
                     printWriter.println(successResponse);
                 } catch (IllegalArgumentException | WrongNumberOfArguments | UnknownRequest e) {
-                    System.out.println("[Client Handler]: " + e.getMessage());
+                    Logger.log(e.getMessage());
                     printWriter.println("ERR;" + e.getMessage());
-                } catch (NullPointerException e){
-                    System.out.println("[Client Handler]: " + e.getMessage());
-                    System.out.println("                   from client "+socket.getRemoteSocketAddress());
+                } catch (NullPointerException e) {
+                    Logger.log(e.getMessage());
                     printWriter.println("ERR;" + e.getMessage());
                     break;
                 }
             }
 
-            System.out.println("[Client Handler]: closed connection from: " + socket.getRemoteSocketAddress());
-            printWriter.println("BYE BYE");//TODO: delete this statement before send the project
-//            Main.decreaseActiveConnection();
+            Logger.log("closed connection from: " + socket.getRemoteSocketAddress());
             //release resources
             bufferedReader.close();
             printWriter.close();
             socket.close();
 
         } catch (IOException e) {
-            System.out.println("[Client Handler]: IO exception was thrown");
+            Logger.log("IO exception was thrown");
             System.exit(0);
         }
     }

@@ -8,6 +8,8 @@ package project.statistics;
 /**
  *
  * @author massi
+ *
+ * ADVANCED PROGRAMMING PROJECT - Class modelling a StatResponse
  */
 public class StatResponse {
 
@@ -40,10 +42,6 @@ public class StatResponse {
                 return "";
         }
 
-    }
-
-    public double getComputationTime() {
-        return computationTime;
     }
 
 }

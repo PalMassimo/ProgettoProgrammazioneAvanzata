@@ -10,8 +10,8 @@ import java.util.Set;
 import static project.utils.ComputationKind.*;
 
 /**
- *
- * @author massi
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - Class that models a computation request
  */
 public class ComputationRequest {
 

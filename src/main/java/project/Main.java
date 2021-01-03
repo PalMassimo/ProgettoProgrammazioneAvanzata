@@ -7,13 +7,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * @author massi
- * ADVANCED PROGRAMMING - PROJECT
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - Main Class
  */
 public class Main {
 
     public static int portNumber;
-    private static ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+    private static final ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
     private static final String SYNTAX_INSTRUCTIONS = "The syntax expected is: java -jar PalmisanoMassimo.jar PORT_NUMBER";
 
     public static void main(String[] args) {
@@ -52,6 +52,7 @@ public class Main {
             System.out.println(SYNTAX_INSTRUCTIONS);
             System.exit(0);
         } catch (IllegalArgumentException e) {
+            System.out.println("Bad syntax for port number");
             System.out.println(e.getMessage());
             System.exit(0);
         }

@@ -12,10 +12,13 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import static project.utils.ComputationKind.*;
+import static project.utils.ComputationKind.AVG;
+import static project.utils.ComputationKind.MAX;
+import static project.utils.ComputationKind.MIN;
 
 /**
- * @author massi
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - A class that compute the result of a computation request
  */
 public class ComputeResult {
 
@@ -72,21 +75,10 @@ public class ComputeResult {
             return allResults.size();
         }
 
-//        return switch (computationKind) {
-//            case MAX -> ;
-//            case "MIN" ->
-//            case "AVG" -> calculateAvg();
-//            case "COUNT" -> allResults.size();
-//            default -> 0; //TODO: fix
-//        };
     }
 
     private double calculateAvg() {
         double sum = allResults.stream().mapToDouble(Double::doubleValue).sum();
-//        for (Double real : allResults) {
-//            sum = sum + real;
-//        }
-
         return sum / allResults.size();
     }
 

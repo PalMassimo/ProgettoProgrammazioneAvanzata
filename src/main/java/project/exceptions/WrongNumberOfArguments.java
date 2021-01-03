@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package project.exceptions;
 
 /**
- *
- * @author massi
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - Exception thrown when a string token doesn't have the expected number of parameters
  */
 public class WrongNumberOfArguments extends RuntimeException {
 

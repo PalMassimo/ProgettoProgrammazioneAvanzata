@@ -1,8 +1,8 @@
 package project.computation;
 
 /**
- *
- * @author massi
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - A class that models a computation response
  */
 public class ComputationResponse {
 

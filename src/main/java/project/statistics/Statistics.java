@@ -3,6 +3,9 @@ package project.statistics;
 /**
  *
  * @author massi
+ *
+ * ADVANCED PROGRAMMING PROJECT - A class holding server statistics
+ *
  */
 public class Statistics {
 

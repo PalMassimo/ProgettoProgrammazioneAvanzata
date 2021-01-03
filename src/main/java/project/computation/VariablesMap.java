@@ -4,7 +4,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 /**
- * @author massi
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - A map class that map a string variables to their values
  */
 public class VariablesMap extends HashMap<String, Double[]> {
 

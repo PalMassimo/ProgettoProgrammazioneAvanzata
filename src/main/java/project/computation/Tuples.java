@@ -1,6 +1,5 @@
 package project.computation;
 
-import jdk.jfr.ValueDescriptor;
 import project.utils.CartesianProduct;
 import project.utils.ValuesKind;
 
@@ -11,8 +10,8 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- *
- * @author massi
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - A class that build tuples for the compute the result of a computation response
  */
 public class Tuples {
 
