@@ -16,7 +16,7 @@ public class Client {
 
 
         System.out.println(bufferedReader.readLine());
-        printWriter.println("MIN_GRID;x0:-1:0.1:1,x1:-10:1:20;((x0+(2.0^x1))/(21.1-x0));(x1*x0)");
+        printWriter.println("MIN_GRID;x0:-1:0.1:1,x1:-10:1:20;((x0+(2.0^x1))/(21.1-x0));(x1*x0);((x1+x0)*63.2)/(x0^x1);(x1-800)");
         System.out.println(bufferedReader.readLine());
         printWriter.println("COUNT_LIST;x0:1:0.01:100;x0");
         System.out.println(bufferedReader.readLine());
@@ -28,7 +28,6 @@ public class Client {
         System.out.println("STAT_MAX_TIME: " + bufferedReader.readLine());
 
         printWriter.println("BYE");
-        System.out.println(bufferedReader.readLine());
         bufferedReader.close();
         printWriter.close();
         socket.close();

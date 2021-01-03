@@ -43,15 +43,14 @@ public class ClientHandler implements Runnable {
 
             Logger.log("New connection from: " + socket.getRemoteSocketAddress());
             printWriter.println("Waiting for request...");
-            String requestLine;
+            String requestLine = "";
 
             loop:
             while (true) {
                 try {
                     requestLine = bufferedReader.readLine();
 
-                    if (requestLine == null)
-                        throw new NullPointerException("Client " + socket.getRemoteSocketAddress() + " abort the connection");
+                    if (requestLine == null) break;
 
                     switch (RequestParser.parseRequest(requestLine)) {
                         case QUIT_REQUEST -> {
@@ -72,7 +71,7 @@ public class ClientHandler implements Runnable {
                 }
             }
 
-            Logger.log("closed connection from: " + socket.getRemoteSocketAddress());
+            Logger.log((requestLine != null ? "Closed connection from: " : "Abort connection from: ") + socket.getRemoteSocketAddress());
             //release resources
             bufferedReader.close();
             printWriter.close();
@@ -80,7 +79,6 @@ public class ClientHandler implements Runnable {
 
         } catch (IOException e) {
             Logger.log("IO exception was thrown");
-            System.exit(0);
         }
     }
 

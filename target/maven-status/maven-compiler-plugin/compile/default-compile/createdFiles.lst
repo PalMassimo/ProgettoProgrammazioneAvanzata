@@ -12,6 +12,7 @@ project\medvet\Operator.class
 project\statistics\StatResponse.class
 project\medvet\Parser.class
 project\medvet\Variable.class
+project\utils\Logger.class
 project\computation\ComputationResponse.class
 project\utils\CartesianProduct.class
 project\utils\ValuesKind.class

@@ -1,5 +1,7 @@
 package project;
 
+import project.utils.Logger;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -21,6 +23,7 @@ public class Main {
         setPortNumber(args);
 
         try (ServerSocket serverSocket = new ServerSocket(portNumber)) {
+            Logger.log("Server started");
             while (true) {
                 Socket socket = serverSocket.accept();
                 executorService.submit(() -> {
@@ -32,6 +35,7 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
+        Logger.log("Server shut down");
         executorService.shutdown();
 
     }
