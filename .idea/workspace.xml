@@ -5,33 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4e145a2-251e-426a-8df4-51001b7cfe9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgrammazioneAvanzataProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammazioneAvanzataProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/computation/ComputationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/computation/ComputationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/computation/Tuples.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/computation/Tuples.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/computation/VariablesMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/computation/VariablesMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/statistics/StatResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/statistics/StatResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/statistics/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/statistics/Statistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/utils/RequestParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/utils/RequestParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/project/ExceptionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/ExceptionsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/project/RegexRequestTypeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/RegexRequestTypeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/project/RequestParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/RequestParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/project/computation/ComputeResultTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/computation/ComputeResultTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/project/computation/TupleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/computation/TupleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/ClientHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/ClientHandler$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META_INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/project/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/computation/ComputationResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/computation/ComputationResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/computation/Tuples.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/computation/Tuples.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/statistics/StatResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/statistics/StatResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/statistics/Statistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/statistics/Statistics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/utils/RequestParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/utils/RequestParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-unit-test.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-project.ExceptionsTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-project.ExceptionsTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-project.RequestParserTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-project.RequestParserTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-project.computation.ComputationRequestTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-project.computation.ComputationRequestTest.xml" afterDir="false" />
@@ -41,14 +20,12 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-project.computation.VariablesMapTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-project.computation.VariablesMapTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-project.regexRequestTypeTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-project.regexRequestTypeTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/project.ExceptionsTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/project.ExceptionsTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/project.RequestParserTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/project.RequestParserTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/project.computation.ComputationRequestTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/project.computation.ComputationRequestTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/project.computation.ComputeResultTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/project.computation.ComputeResultTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/project.computation.TupleTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/project.computation.TupleTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/project.computation.VariableValueTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/project.computation.VariableValueTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/project.computation.VariablesMapTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/project.computation.VariablesMapTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/project.regexRequestTypeTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/project.regexRequestTypeTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/project/ExceptionsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/project/ExceptionsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/project/RequestParserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/project/RequestParserTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/project/regexRequestTypeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/project/regexRequestTypeTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +59,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="JAR Application.maven-unit-test.jar">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="project.client.Client" />
       <module name="ProgrammazioneAvanzataProject" />
@@ -205,22 +182,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegexRequestTypeTest.testStatRequestRegex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgrammazioneAvanzataProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="project.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="project" />
-      <option name="MAIN_CLASS_NAME" value="project.RegexRequestTypeTest" />
-      <option name="METHOD_NAME" value="testStatRequestRegex(java.lang.String)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RegexRequestTypeTest.testStatRequestRegex2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgrammazioneAvanzataProject" />
       <extension name="coverage">
@@ -237,13 +198,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="maven-unit-test.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/maven-unit-test.jar" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.maven-unit-test.jar" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ExceptionsTest.testRepeteadVariableException" />
         <item itemvalue="JUnit.RegexRequestTypeTest.testStatRequestRegex2" />
-        <item itemvalue="JUnit.RegexRequestTypeTest.testStatRequestRegex" />
       </list>
     </recent_temporary>
   </component>

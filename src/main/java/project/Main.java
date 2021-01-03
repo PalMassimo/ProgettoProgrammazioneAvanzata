@@ -18,18 +18,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        parseCommand(args);
-
-        try {
-            portNumber = Integer.parseInt(args[0]);
-        } catch (NumberFormatException e) {
-            System.out.println("Bad number syntax");
-            System.exit(0);
-        } catch (NullPointerException e) {
-            System.out.println("You have to insert a valid port number");
-            System.exit(0);
-        }
-
+        setPortNumber(args);
 
         try (ServerSocket serverSocket = new ServerSocket(portNumber)) {
             while (true) {
@@ -40,29 +29,31 @@ public class Main {
                 });
             }
         } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            executorService.shutdown();
+            System.out.println(e.getMessage());
         }
+
+        executorService.shutdown();
 
     }
 
-    private static void parseCommand(String[] args) {
+    private static void setPortNumber(String[] args) {
 
         if (args.length != 1) {
-            System.out.println("Expected only one argument: the port number");
+            System.out.println("Expected one and only one argument: the port number");
+            System.out.println(SYNTAX_INSTRUCTIONS);
             System.exit(0);
         }
 
         try {
+            if(!args[0].matches("[0-9]+")) throw new NumberFormatException();
             portNumber = Integer.parseInt(args[0]);
         } catch (NumberFormatException e) {
             System.out.println("Bad syntax for port number");
             System.out.println(SYNTAX_INSTRUCTIONS);
             System.exit(0);
-        } catch (Exception e){
-            System.out.println("Reached unreachable statement");
-            System.exit(-1);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            System.exit(0);
         }
 
     }
