@@ -1,10 +1,10 @@
 package project.computation;
 
-import project.medvet.Constant;
-import project.medvet.Node;
-import project.medvet.Operator;
-import project.medvet.Parser;
-import project.medvet.Variable;
+import project.computation.expressioncomponents.Constant;
+import project.computation.expressioncomponents.Node;
+import project.computation.expressioncomponents.Operator;
+import project.computation.expressioncomponents.Parser;
+import project.computation.expressioncomponents.Variable;
 import project.utils.ComputationKind;
 
 import java.util.Collections;

@@ -7,6 +7,10 @@ import org.junit.jupiter.params.provider.ValueSource;
 import project.utils.RequestParser;
 import project.utils.RequestType;
 
+/**
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - A test class
+ */
 public class RequestParserTest {
 
     @Test

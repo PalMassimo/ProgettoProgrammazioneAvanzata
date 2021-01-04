@@ -7,6 +7,10 @@ import project.utils.RequestParser;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - A test class
+ */
 public class ExceptionsTest {
 
     @ParameterizedTest

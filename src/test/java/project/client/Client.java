@@ -6,6 +6,11 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+
+/**
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - A simple client that can interact with the server in the specified protocol
+ */
 public class Client {
 
     public static void main(String[] args) throws IOException {

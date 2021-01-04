@@ -9,6 +9,10 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static project.utils.ValuesKind.GRID;
 
+/**
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - A test class
+ */
 public class ComputationRequestTest {
 
     @Test

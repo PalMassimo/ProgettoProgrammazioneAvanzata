@@ -4,6 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - A test class
+ */
 public class VariableValueTest {
 
     @Test

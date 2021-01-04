@@ -10,6 +10,10 @@ import java.util.Set;
 
 import static project.utils.ValuesKind.LIST;
 
+/**
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - A test class
+ */
 public class TupleTest {
 
     @Test

@@ -1,4 +1,4 @@
-package project.medvet;
+package project.computation.expressioncomponents;
 
 import java.util.Collections;
 import java.util.Objects;

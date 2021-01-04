@@ -71,8 +71,6 @@ public class RequestParser {
                 throw new IllegalArgumentException("Min value cannot be greater than max value");
             }
 
-            //TODO: check step size value:
-            //e.g. x0:-1:0.3:1 -> valore dello step size non va bene
         }
         return true;
     }

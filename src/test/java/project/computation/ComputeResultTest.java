@@ -8,6 +8,10 @@ import project.utils.RequestParser;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
+/**
+ * @author Massimo Palmisano
+ * ADVANCED PROGRAMMING PROJECT - A test class
+ */
 public class ComputeResultTest {
 
     @ParameterizedTest
